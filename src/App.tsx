@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -6,6 +6,11 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [count2, setCount2] = useState(0)
+
+  useEffect(() => {
+    console.log(count)
+  }, [count])
 
   return (
     <>
@@ -27,6 +32,13 @@ function App() {
           onClick={() => setCount((count) => count + 1)}
         >
           Count is {count}
+        </button>
+        <button
+          type="button"
+          className="counter"
+          onClick={() => setCount2((count2) => count2 + 1)}
+        >
+          Count2 is {count2}
         </button>
       </section>
 
